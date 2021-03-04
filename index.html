@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<!-- test -->
+<head>
+    <meta charset='UTF-8'>
+    <title>포트폴리오</title>
+    <link rel="stylesheet" type="text/css" href="./css/fullpage.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/solar_system.css">
+    <link rel="stylesheet" href="./css/moon_night.css">
+    <link rel="stylesheet" href="./css/button_effect.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .container {
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .click_png {
+            position: absolute;
+            left: 50%;
+            z-index: 300;
+        }
+
+        .text_box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            text-align: center;
+            color: #444;
+            font-size: 16px;
+            line-height: 32px;
+        }
+
+        .typing-txt1,
+        .typing-txt2 {
+            display: none;
+        }
+
+        .typing ul li.on {
+            display: inline;
+            animation-name: cursor;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+        }
+
+        .typing ul {
+            list-style: none;
+        }
+
+        @keyframes cursor {
+            0% {
+                border-right: 1px solid #fff
+            }
+
+            50% {
+                border-right: 1px solid #000
+            }
+
+            100% {
+                border-right: 1px solid #fff
+            }
+        }
+    </style>
+    <script src='./js/jquery-1.12.4.min.js'></script>
+    <script src='./js/gsap.min.js'></script>
+    <script src="./js/fullpage.min.js"></script>
+    <script src="./js/auto_text.js"></script>
+    <script src="./js/button_effect.js"></script>
+    <script src="./js/click_hover.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                //options here
+                autoScrolling: true,
+                scrollHorizontally: true,
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['1', '2', '3', '4', '5', '6'],
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section" id="intro">
+            <div class="container">
+                <div class="moon_night">
+                    <div class="carter first"></div>
+                    <div class="carter second"></div>
+                    <div class="carter third"></div>
+                    <div class="moon-halo"></div>
+                </div>
+                <div class="meteors_night">
+                    <div class="meteor"></div>
+                    <div class="meteor"></div>
+                    <div class="meteor"></div>
+                    <div class="meteor"></div>
+                </div>
+                <div class="stars_night">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="planet_night"></div>
+                <div class="mountains_night"></div>
+            </div>
+            <div class="text_box">
+                <div class="typing-txt1">
+                    <ul>
+                        <li>달이 참 밝네요</li>
+                        <li></li>
+                        <li>여행을 떠나볼까요?</li>
+                    </ul>
+                </div>
+
+                <div class="typing-txt2">
+                    <ul>
+                        <li>달을 보고만 있어도 좋아요</li>
+                        <li>...사실은 모자라요</li>
+                        <li>직접 보고싶어요</li>
+                    </ul>
+                </div>
+
+                <div class="typing">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <img class="click_png" src="./image/click_me.png" alt="">
+        </div>
+        <div class="section" id="myself">
+            <div class="effect_button">
+                <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svg-sprite">
+                    <defs>
+                        <filter id="filter">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.000001 0.000001" numOctaves="1" result="warp"
+                                seed="1"></feTurbulence>
+                            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic"
+                                in2="warp"></feDisplacementMap>
+                        </filter>
+                    </defs>
+                </svg>
+                <div class="button_wrap">
+                    <div class="btn btn-small btn-clear btn-light btn-glitch" id=shipButton>우주선</div><!-- btn-dark btn-glitch -->
+                    <div class="btn btn-small btn-clear btn-light btn-glitch" id="pilotButton">비행사</div>
+                </div>
+            </div>
+            <div class="spaceship img_text_box active">
+                <div class="img">
+                    <div class="border"></div>
+                </div>
+                <div class="text_box">
+                    <strong>이름</strong>
+                    <p>인듀런스호</p>
+                    <strong>특징</strong>
+                    <p>원운동을 통한 원심력으로 유사 중력 생성 가능</p>
+                    <strong>제작년도</strong>
+                    <p>2021.03.15</p>
+                </div>
+            </div>
+            <div class="pilot img_text_box">
+                <div class="img">
+                    <div class="border"></div>
+                </div>
+                <div class="text_box">
+                    <strong>프로필</strong>
+                    <p>김건 KIMKUN <br>
+                    1994.02.27 <br>
+                    010-8441-3813 <br>
+                    경기도 용인시</p>
+                    <strong>교육과정</strong>
+                    <p>2020.10 - 2021.03 성남 하이미디어 컴퓨터 학원 <br>
+                    웹 퍼블리셔 전문가 과정 수료</p>
+                    <strong>교육과정</strong>
+                    <p>2020.10 - 2021.03 성남 하이미디어 컴퓨터 학원 <br>
+                    웹 퍼블리셔 전문가 과정 수료</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="section" id="skill">
+            <h1 class='logo'>
+                My Skill
+                <span>Solar explorer</span>
+            </h1>
+            <input class='planet9' id='pluto' name='planet' type='radio'>
+            <label class='pluto menu' for='pluto'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        social
+                    </h2>
+                    <h3>Pluto</h3>
+                </div>
+            </label>
+            <input class='planet8' id='neptune' name='planet' type='radio'>
+            <label class='neptune menu' for='neptune'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        Debug
+                    </h2>
+                    <h3>Neptune</h3>
+                </div>
+            </label>
+            <input class='planet7' id='uranus' name='planet' type='radio'>
+            <label class='uranus menu' for='uranus'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        algorithm
+                    </h2>
+                    <h3>Uranus</h3>
+                </div>
+            </label>
+            <input class='planet6' id='saturn' name='planet' type='radio'>
+            <label class='saturn menu' for='saturn'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        PHOTOSHOP
+                    </h2>
+                    <h3>Saturn</h3>
+                </div>
+            </label>
+            <input class='planet5' id='jupiter' name='planet' type='radio'>
+            <label class='jupiter menu' for='jupiter'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        javascript
+                    </h2>
+                    <h3>Jupiter</h3>
+                </div>
+            </label>
+            <input checked='checked' class='planet4' id='mars' name='planet' type='radio'>
+            <label class='menu mars' for='mars'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        Jquery
+                    </h2>
+                    <h3>Mars</h3>
+                </div>
+            </label>
+            <input checked='checked' class='planet3' id='earth' name='planet' type='radio'>
+            <label class='menu earth' for='earth'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        GITHUB, ZEPLIN
+                    </h2>
+                    <h3>Earth</h3>
+                </div>
+            </label>
+            <input checked='checked' class='planet2' id='venus' name='planet' type='radio'>
+            <label class='menu venus' for='venus'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        css
+                    </h2>
+                    <h3>Venus</h3>
+                </div>
+            </label>
+            <input checked='checked' class='planet1' id='mercury' name='planet' type='radio'>
+            <label class='menu mercury' for='mercury'>
+                <div class='preview'></div>
+                <div class='info'>
+                    <h2>
+                        <div class='pip'></div>
+                        html
+                    </h2>
+                    <h3>Mercury</h3>
+                </div>
+            </label>
+            <div class='solar'>
+                <div class='solar_systm'>
+                    <div class='planet mercury'>
+                        <div class='planet_description mercury'>
+                            <h2>Mercury</h2>
+                            <h1>HTML</h1>
+                            <p>웹 사이트의 가장 기본인 HTML을 안정적인 형태로 짤 수 있습니다. 뒤에 따라올 CSS와 JAVASCRIPT까지 생각하며 수성과 같이 밀도있는 코딩을 합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet venus'>
+                        <div class='planet_description venus'>
+                            <h2>Venus</h2>
+                            <h1>CSS</h1>
+                            <p>HTML의 뒤를 이어 기본적인 CSS 및 미디어 쿼리를 사용한 반응형 사이트 경험을 갖추고 있습니다. 금성과 같이 밝게 빛나는 코딩을 지향합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet earth'>
+                        <div class='moon moon'>
+                            <h3>Moon</h3>
+                            <h2>Moon</h2>
+                        </div>
+                        <div class='trajectory m'></div>
+                        <div class='planet_description earth'>
+                            <h2>Earth</h2>
+                            <h1>Github, ZEPLIN</h1>
+                            <p>GITHUB, ZEPLIN을 이용한 협업작업을 할 수 있습니다. 많은 생물이 공존하는 지구와 같이 하나의 목표를 향해 함께 일할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet mars'>
+                        <div class='moon deimos'>
+                            <h3>Moon</h3>
+                            <h2>Deimos</h2>
+                        </div>
+                        <div class='trajectory d'></div>
+                        <div class='moon phoebos'>
+                            <h3>Moon</h3>
+                            <h2>Phoebos</h2>
+                        </div>
+                        <div class='trajectory p'></div>
+                        <div class='planet_description mars'>
+                            <h2>Mars</h2>
+                            <h1>JQUERY</h1>
+                            <p>Jquery를 이용하여 다양한 이벤트를 제작하며 오픈소스 라이브러리를 자유롭게 사용할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet jupiter'>
+                        <div class='moon lo'>
+                            <h3>Moon</h3>
+                            <h2>Io</h2>
+                        </div>
+                        <div class='moon europa'>
+                            <h3>Moon</h3>
+                            <h2>Europa</h2>
+                        </div>
+                        <div class='moon ganymede'>
+                            <h3>Moon</h3>
+                            <h2>Ganymede</h2>
+                        </div>
+                        <div class='trajectory lop'></div>
+                        <div class='trajectory eu'></div>
+                        <div class='trajectory ga'></div>
+                        <div class='planet_description jupiter'>
+                            <h2>Jupiter</h2>
+                            <h1>Javascript</h1>
+                            <p>PYTHON을 다뤘던 경험을 바탕으로 목성과 같은 웅장한 코딩이 가능합니다. 또한 라이브러리를 가져와서 자유롭게 수정할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet saturn'>
+                        <div class='moon titan'>
+                            <h3>Moon</h3>
+                            <h2>Titan</h2>
+                        </div>
+                        <div class='moon dione'>
+                            <h3>Moon</h3>
+                            <h2>Dione</h2>
+                        </div>
+                        <div class='moon enceladus'>
+                            <h3>Moon</h3>
+                            <h2>Enceladus</h2>
+                        </div>
+                        <div class='trajectory ti'></div>
+                        <div class='trajectory di'></div>
+                        <div class='trajectory enc'></div>
+                        <div class='planet_description saturn'>
+                            <h2>Saturn</h2>
+                            <h1>PHOTOSHOP</h1>
+                            <p>웹 퍼블리싱에 편하도록 자유로운 편집작업이 가능합니다. 이로써 토성의 고리와 같은 아름다운 작업이 가능합니다</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet uranus'>
+                        <div class='moon miranda'>
+                            <h3>Moon</h3>
+                            <h2>Miranda</h2>
+                        </div>
+                        <div class='moon ariel'>
+                            <h3>Moon</h3>
+                            <h2>Ariel</h2>
+                        </div>
+                        <div class='moon umbriel'>
+                            <h3>Moon</h3>
+                            <h2>Umbriel</h2>
+                        </div>
+                        <div class='trajectory mir'></div>
+                        <div class='trajectory ari'></div>
+                        <div class='trajectory umb'></div>
+                        <div class='planet_description uranus'>
+                            <h2>Uranus</h2>
+                            <h1>algorithm</h1>
+                            <p>PYTHON의 경험을 살려 여러가지 알고리즘을 구현할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet neptune'>
+                        <div class='moon triton'>
+                            <h3>Moon</h3>
+                            <h2>Triton</h2>
+                        </div>
+                        <div class='moon proteus'>
+                            <h3>Moon</h3>
+                            <h2>Proteus</h2>
+                        </div>
+                        <div class='moon nereid'>
+                            <h3>Moon</h3>
+                            <h2>Nereid</h2>
+                        </div>
+                        <div class='trajectory tri'></div>
+                        <div class='trajectory pro'></div>
+                        <div class='trajectory ner'></div>
+                        <div class='planet_description neptune'>
+                            <h2>Neptune</h2>
+                            <h1>Debug</h1>
+                            <p>코딩이 언제나 청신호가 되도록 개발자 도구를 활용하여 효율적인 디버그가 가능합니다. PYTHON의 경험을 살려서 감각적으로 잘못된 곳을 찾아내기도 합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='solar_systm'>
+                    <div class='planet pluto'>
+                        <div class='planet_description pluto'>
+                            <h2>Pluto</h2>
+                            <h1>social</h1>
+                            <p>심리학 강사였던 경험을 살려 여러 사람들과 잘어울릴 수 있습니다. 이렇게 사람과의 관계를 매끄럽게 하는 것은 생산성으로도 이어집니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="section" id="public">
+            <ul>
+                <li class="homepage" id="homepage1"><a href="">
+                        <div>
+                            <img src="./image/public/section1_icon01.png" alt="">
+                            <h3>라온시큐어</h3>
+                            <p>a태그를 전체에 펼쳐서 <br>어딜 클릭하든 이동할 수 있습니다</p>
+                            <button type="button">자세히 보기</button>
+                        </div>
+                    </a></li>
+                <li class="homepage" id="homepage2"><a href="">
+                        <div>
+                            <img src="./image/public/section1_icon02.png" alt="">
+                            <h3>불스원샷</h3>
+                            <p>시안입니다 <br>구체적인 디자인은 달라질 수 있습니다</p>
+                            <button type="button">자세히 보기</button>
+                        </div>
+                    </a></li>
+                <li class="homepage" id="homepage3"><a href="">
+                        <div>
+                            <img src="./image/public/section1_icon03.png" alt="">
+                            <h3>한화리즈</h3>
+                            <p>호버하면 버튼 나오고<br>붕 뜨게 만들거에요</p>
+                            <button type="button">자세히 보기</button>
+                        </div>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

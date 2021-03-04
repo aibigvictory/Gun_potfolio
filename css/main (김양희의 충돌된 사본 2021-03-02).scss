@@ -1,0 +1,36 @@
+.section{position: relative;}
+#myself{
+    .effect_button{
+        .button_wrap{
+            position: absolute;display: flex;top: 100px;right: 100px;
+        }
+    }
+}
+#public{
+    ul{
+        display: flex;
+        width: 100%;height: 100%;text-align: center;
+        li{
+            position: relative;
+            width: calc(100% / 3);
+            background-color: #2c2d44;
+            background-image: linear-gradient(45deg, #3f3251 2%, #002025 100%);;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            a{
+                position: absolute;
+                display: block;width: 100%;height: 100%;
+                div{
+                    position: absolute;top: 50%;left: 50%;
+                    transform: translate(-50%,0);//호환성 maxin으로
+                    color: #fff;
+                    img{width: 98px;}
+                    h3{padding: 30px 0 25px;font-size: 40px;}//font-weight: 500;
+                    p{line-height: 1.7;opacity: 0.7;}//font-weight: 300;
+                    button{display: none;}
+                }
+            }
+        }
+    }
+}
