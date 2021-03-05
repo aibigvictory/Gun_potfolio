@@ -208,8 +208,6 @@
     top: -6px;
     font-family: Do Hyeon;
     font-size: 20px; }
-    .fp-viewing-0 #fp-nav ul li .fp-tooltip {
-      color: #111; }
   #fp-nav ul li a.active + .fp-tooltip {
     right: 50px; }
 

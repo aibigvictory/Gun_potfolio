@@ -152,7 +152,7 @@
   .fp-tooltip.fp-right{right: 40px;}
   .fp-tooltip{
     top: -6px;font-family: Do Hyeon;font-size: 20px;
-    .fp-viewing-0 &{color: #111}
+    //.fp-viewing-0 &{color: #111}
   }
   a.active + .fp-tooltip{right: 50px;}
 }

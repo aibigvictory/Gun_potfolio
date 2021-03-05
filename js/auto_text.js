@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
     //함수실행
     type();
     //함수실행이 끝나고 클릭하면 다시 반복
-    document.getElementById('container').addEventListener('click', function () {
+    document.getElementById('moon-halo').addEventListener('click', function () {
         target.innerHTML = ''
         type();
     });
