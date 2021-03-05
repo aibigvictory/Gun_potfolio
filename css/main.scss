@@ -143,15 +143,16 @@
 }
 
 //fullpage 네비게이션
-#fp-nav.fp-left{right: 60px;}
+#fp-nav.fp-left{right: 40px;}
 #fp-nav ul li{
-  width: 20px;height: 4px;margin: 30px 0 0;
-  a.active span, &:hover a.active span{height: 4px;width: 40px;margin: 0;border-radius: 0;background: #bbb}
-  a span{border-radius: 0;height: 4px;width: 20px;background: #777;margin: 0;}
-  &:hover a span{width: 20px;height: 4px;margin: 0;}
+  width: 20px;height: 6px;margin: 30px 0 0;
+  a.active span, &:hover a.active span{height: 6px;width: 30px;margin: 0;border-radius: 0;background: #bbb;}
+  a span{border-radius: 0;height: 6px;width: 20px;background: #777;margin: 0;}
+  &:hover a span{width: 20px;height: 6px;margin: 0;}
   .fp-tooltip.fp-right{right: 40px;}
   .fp-tooltip{
-    top: -6px;font-family: sCoreDream;
+    top: -6px;font-family: Do Hyeon;font-size: 20px;
+    .fp-viewing-0 &{color: #111}
   }
   a.active + .fp-tooltip{right: 50px;}
 }
