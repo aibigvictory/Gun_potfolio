@@ -1,1 +1,55 @@
-var _0xd439=['154477ddImIW','381LpQMmY','one','11OtLUwM','2PLLJMR','384547wdUjtY','53093vrlHfn','.typing-txt2>ul>li','removeClass','.text_box','slice','length','text','.click_png','css','1993IfxgGk','399105DasKAY','.container','.typing>ul>li','append','2bZNjRK','.typing-txt1>ul>li','ready','5dFKnfQ','.typing\x20ul\x20li','html','116303TzgeoA','292440lDtAfp'];var _0x4b95=function(_0x5469cd,_0x3b737f){_0x5469cd=_0x5469cd-0x19e;var _0xd43930=_0xd439[_0x5469cd];return _0xd43930;};var _0x20f0a7=_0x4b95;(function(_0x3f14f9,_0x5b6109){var _0x33f852=_0x4b95;while(!![]){try{var _0x523125=-parseInt(_0x33f852(0x1b7))*parseInt(_0x33f852(0x19e))+parseInt(_0x33f852(0x1a7))*parseInt(_0x33f852(0x1b5))+parseInt(_0x33f852(0x1b4))*-parseInt(_0x33f852(0x1af))+-parseInt(_0x33f852(0x1b9))*-parseInt(_0x33f852(0x1b8))+-parseInt(_0x33f852(0x1b3))+parseInt(_0x33f852(0x1a8))+parseInt(_0x33f852(0x1ac))*parseInt(_0x33f852(0x1b2));if(_0x523125===_0x5b6109)break;else _0x3f14f9['push'](_0x3f14f9['shift']());}catch(_0xb1b477){_0x3f14f9['push'](_0x3f14f9['shift']());}}}(_0xd439,0x7cd3a),$(document)[_0x20f0a7(0x1ae)](function(){var _0xcce122=_0x20f0a7;$(_0xcce122(0x1a9))[_0xcce122(0x1b6)]('click',function(){var _0x5179f1=_0xcce122;$(_0x5179f1(0x1a1))[_0x5179f1(0x1a6)]({'width':0x12c,'height':0x64}),$(_0x5179f1(0x1a5))[_0x5179f1(0x1a6)]({'display':'none'});var _0x2c5f25=![],_0xf49f00=![],_0x2c987d=0x0,_0x495ae5=0x0,_0x4e4bbe=0x0,_0x506b58=$(_0x5179f1(0x1ad))[_0x5179f1(0x1a3)],_0x1e421c=$('.typing-txt2>ul>li')[_0x5179f1(0x1a3)],_0x12f124=-0x1,_0x5700d1=null,_0xbb1ec0=null,_0x210321=$(_0x5179f1(0x1ad))['eq'](_0x495ae5)[_0x5179f1(0x1a4)]();_0x210321=_0x210321['split']('');_0x2c5f25==![]&&(_0x2c5f25=!![],_0xbb1ec0=setInterval(_0x2adeda,0xc8));function _0x2adeda(){var _0x141488=_0x5179f1;_0x2c987d<_0x210321[_0x141488(0x1a3)]?($(_0x141488(0x1aa))[_0x141488(0x1a0)]('on'),$(_0x141488(0x1b0))['eq'](_0x495ae5)['addClass']('on'),$(_0x141488(0x1b0))['eq'](_0x495ae5)[_0x141488(0x1ab)](_0x210321[_0x2c987d]),_0x2c987d++,_0x2c987d==_0x210321[_0x141488(0x1a3)]&&(_0x495ae5==0x2?(clearInterval(_0xbb1ec0),setTimeout(function(){var _0x24d0ca=_0x141488;$(_0x24d0ca(0x1aa))[_0x24d0ca(0x1a0)]('on');},0x1f4)):(clearInterval(_0xbb1ec0),setTimeout(function(){_0xbb1ec0=setInterval(_0x2adeda,0xc8);},0x3e8)))):_0x495ae5==0x1&&_0xf49f00==![]?-_0x210321[_0x141488(0x1a3)]-0x1<_0x12f124?($(_0x141488(0x1b0))['eq'](_0x495ae5)[_0x141488(0x1b1)](_0x210321[_0x141488(0x1a2)](0x0,_0x12f124)),_0x12f124--):(_0x2c987d=0x0,_0x12f124=-0x1,_0x210321=$(_0x141488(0x19f))['eq'](_0x4e4bbe)[_0x141488(0x1a4)](),_0x4e4bbe++,_0x4e4bbe==_0x1e421c&&(_0xf49f00=!![]),clearInterval(_0xbb1ec0),setTimeout(function(){_0xbb1ec0=setInterval(_0x2adeda,0xc8);},0x3e8)):(_0x2c987d=0x0,_0x495ae5<=_0x506b58-0x1&&_0x495ae5++,_0x210321=$(_0x141488(0x1ad))['eq'](_0x495ae5)[_0x141488(0x1a4)]());}});}));
+//document load 후 스크립트 작성 (왜? #type 을 받기위하여)
+window.addEventListener('load', function () {
+    //타이핑 하고싶은 내용 저장
+    var memo1 = '반갑습니다'
+    var memo2 = '웹이라는 우주를 여행하는'
+    var memo3 = '웹 퍼블리셔 김건입니다'
+    var memo4 = "곧 우주여행을 출발합니다"
+    var memo5 = "다시 보시려면 클릭해주세요"
+    var memo6 = "Gun's potfolio"
+
+    //텍스트 출력횟수 = 텍스트 글자수
+    let i = 0,
+        j = 0;
+
+    //배열에 [내용] 저장
+    const textArray = [memo1, memo2, memo3, memo4, memo5, memo6],
+        speed = 50,
+        target = document.getElementById("type");
+
+    //console.log(textArray)
+
+    //txtnum 함수 : 텍스트 갯수를 세서 저장 (왜? 텍스트를 지울때 텍스트 갯수보다 더 지우면 오류가 나니까 세주는 것)
+    function txtnum() {
+        //console.log(textArray.length)
+        j == textArray.length - 1 ?
+            j = 0 :
+            j++
+    }
+
+    //type 함수 : txtnum에서 센 텍스트 갯수를 토대로 출력한다. 끝나면 지우는 함수 호출
+    function type() {
+        i < textArray[j].length ?
+            (target.innerHTML += textArray[j].charAt(i), i++, setTimeout(type, 100)) :
+            remove()
+    }
+
+    //remove 함수 : txtnum에서 센 텍스트 갯수만큼 지워주고 i-- 실행, i가 -1이 되면 type함수와 txtnum 함수를 호출해서 반복
+    function remove() {
+        //console.log('i',i);
+        //console.log(target.innerHTML)
+        //console.log(textArray[textArray.length-1])
+        //마지막 텍스트는 제거 효과 안하고 빠져나옴
+        if (target.innerHTML == textArray[textArray.length-1]) return false;
+        0 <= i ?
+            (target.innerHTML = target.innerHTML.slice(0, i), i--, setTimeout(remove, speed)) :
+            (type(), txtnum())
+    }
+    //함수실행
+    type();
+    //함수실행이 끝나고 클릭하면 다시 반복
+    document.getElementById('container').addEventListener('click', function () {
+        target.innerHTML = ''
+        type();
+    });
+});

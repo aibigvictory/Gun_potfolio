@@ -5,7 +5,25 @@
 
 //호환성 maxin으로
 
-.section{position: relative;}
+.section{position: relative;overflow: hidden;}
+#intro{
+    .container {
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .text_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        text-align: center;
+    }
+
+    #type{color: #777;font-size: 18px;line-height: 32px;cursor: pointer;}
+}
+
 #myself{
     //버튼 위치 및 배열 제어
     .effect_button{
@@ -13,19 +31,21 @@
     }
     //이미지와 설명 공통 CSS
     .img_text_box{
-        transition: opacity 1s;
+        transition: opacity 1s;display: flex;
+        .img{animation: no_active_img 1s linear forwards;}
+        .text_box{animation: no_active_text 1s linear forwards;}
         &.active{
             opacity: 1;
             .img{animation: active_img 1s linear forwards;}
             .text_box{animation: active_text 1s linear forwards;}
         }
-        &.no_active{
-            .img{animation: no_active_img 1s linear forwards;}
-            .text_box{animation: no_active_text 1s linear forwards;}
-        }
+        //&.no_active{
+            //
+            //
+        //}
         position: absolute;margin: calc(3vw + 150px) 0 0 15vw;
         .img{
-            position: relative; width: 35vw;height: 35vw;background: url(../image/myslef/unnamed-removebg-preview.jpg) no-repeat center;background-size: cover;
+            position: relative; width: 35vw;height: 35vw;background: url(../image/myslef/unnamed-removebg-preview.jpg) no-repeat center;background-size: cover;transform: translate(-150%,0);
             .border{position: absolute;top: -2vw;left: -2vw;width: 35vw;height: 35vw;;border: 3px solid #8957a1;}
         }
     }
@@ -43,26 +63,26 @@
     }
     //텍스트 공통 CSS
     .text_box{
-        margin: 5vw 0 0 44vw;width: 35vw;height: 35vw;text-align: left;line-height: 1.5;
+        margin: 5vw 0 0 10vw;line-height: 1.5;transform: translate(150%,0);
         strong{font-size: 1.6vw;color: #8957a1;}
         p{font-size: 1.04vw;color: #fff;padding-bottom: 5vw;}
     }
     //좌우에서 들어오는 애니메이션
     @keyframes active_img {
-        55%{transform: translateX(-150%);opacity: 0;}
-        100%{transform: translateX(0);opacity: 1;}
+        55%{transform: translate(-150%,0);opacity: 0;}
+        100%{transform: translate(0,0);opacity: 1;}
     }
     @keyframes active_text {
-        55%{transform: translate(100%,-50%);opacity: 0;}
-        100%{transform: translate(-50%,-50%);opacity: 1;}
+        55%{transform: translate(300%,0);opacity: 0;}
+        100%{transform: translate(0,0);opacity: 1;}
     }
     @keyframes no_active_img {
-        0%{transform: translateX(0);opacity: 1;}
-        45%{transform: translateX(-150%);opacity: 0;}
+        0%{transform: translate(0,0);opacity: 1;}
+        45%{transform: translate(-150%,0);opacity: 0;}
     }
     @keyframes no_active_text {
-        0%{transform: translate(-50%,-50%);opacity: 1;}
-        45%{transform: translate(100%,-50%);opacity: 0;}
+        0%{transform: translate(0,0);opacity: 1;}
+        45%{transform: translate(300%,0);opacity: 0;}
     }
 
 }

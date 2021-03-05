@@ -11,58 +11,12 @@
     <link rel="stylesheet" href="./css/button_effect.css">
     <link rel="stylesheet" href="./css/main.css">
     <style>
-        .container {
-            cursor: pointer;
-            z-index: 100;
-        }
-
         .click_png {
-            position: absolute;
-            left: 50%;
-            z-index: 300;
-        }
-
-        .text_box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 100;
-            text-align: center;
-            color: #444;
-            font-size: 16px;
-            line-height: 32px;
-        }
-
-        .typing-txt1,
-        .typing-txt2 {
-            display: none;
-        }
-
-        .typing ul li.on {
-            display: inline;
-            animation-name: cursor;
-            animation-duration: 0.3s;
-            animation-iteration-count: infinite;
-        }
-
-        .typing ul {
-            list-style: none;
-        }
-
-        @keyframes cursor {
-            0% {
-                border-right: 1px solid #fff
-            }
-
-            50% {
-                border-right: 1px solid #000
-            }
-
-            100% {
-                border-right: 1px solid #fff
-            }
-        }
+        position: absolute;
+        left: 50%;
+        z-index: 300;
+        display: none;
+    }
     </style>
     <script src='./js/jquery-1.12.4.min.js'></script>
     <script src='./js/gsap.min.js'></script>
@@ -79,7 +33,7 @@
                 scrollHorizontally: true,
                 navigation: true,
                 navigationPosition: 'right',
-                navigationTooltips: ['1', '2', '3', '4', '5', '6'],
+                navigationTooltips: ['메인화면', '자기소개', '나의스킬', '퍼블리싱', '5', '6'],
             });
         });
     </script>
@@ -88,7 +42,7 @@
 <body>
     <div id="fullpage">
         <div class="section" id="intro">
-            <div class="container">
+            <div class="container" id="container">
                 <div class="moon_night">
                     <div class="carter first"></div>
                     <div class="carter second"></div>
@@ -132,29 +86,7 @@
                 <div class="mountains_night"></div>
             </div>
             <div class="text_box">
-                <div class="typing-txt1">
-                    <ul>
-                        <li>달이 참 밝네요</li>
-                        <li></li>
-                        <li>여행을 떠나볼까요?</li>
-                    </ul>
-                </div>
-
-                <div class="typing-txt2">
-                    <ul>
-                        <li>달을 보고만 있어도 좋아요</li>
-                        <li>...사실은 모자라요</li>
-                        <li>직접 보고싶어요</li>
-                    </ul>
-                </div>
-
-                <div class="typing">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+                <div id="type"></div>
             </div>
             <img class="click_png" src="./image/click_me.png" alt="">
         </div>
