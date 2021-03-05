@@ -18,7 +18,4 @@ $(document).ready(function () { //버튼을 누르면
             $(this).removeClass('active');
         }
     });
-    $('#container').on('click', function () {
-        $(this).addClass('active');
-    });
 });

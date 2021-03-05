@@ -8,6 +8,9 @@ window.addEventListener('load', function () {
     var memo5 = '다시 보시려면 클릭해주세요.'
     var memo6 = "Gun's potfolio"
 
+    var noRepeat = false;
+    var oneRepeat = true;
+
     //텍스트 출력횟수 = 텍스트 글자수
     let i = 0,
         j = 0;
@@ -40,16 +43,32 @@ window.addEventListener('load', function () {
         //console.log(target.innerHTML)
         //console.log(textArray[textArray.length-1])
         //마지막 텍스트는 제거 효과 안하고 빠져나옴
-        if (target.innerHTML == textArray[textArray.length-1]) return false;
+        if (target.innerHTML == textArray[textArray.length-1]) {
+            //noRepeat를 다시 true로 바꿔주어 다시 실행 할 수 있도록 해주고 종료
+            noRepeat = true;
+            return false;
+        };
         0 <= i ?
             (target.innerHTML = target.innerHTML.slice(0, i), i--, setTimeout(remove, speed)) :
             (type(), txtnum())
     }
     //함수실행
     type();
+    
     //함수실행이 끝나고 클릭하면 다시 반복
-    document.getElementById('moon-halo').addEventListener('click', function () {
-        target.innerHTML = ''
-        type();
+    document.getElementById('container').addEventListener('click', function () {    console.log(noRepeat);
+        //반복 방지를 위해 코드가 실행되는 동안 noRepeat의 값을 false로 바꿔준다
+        if (noRepeat) {
+            //단 한번 배경 넓어지는 효과 적용
+            if (oneRepeat) {
+                document.getElementById('container').classList.add('active')
+                oneRepeat = false;
+            }
+            noRepeat = false;
+            target.innerHTML = '';
+            type();
+        }
+        
+        //console.log('tmp',noRepeat);
     });
 });
