@@ -1,11 +1,11 @@
 //document load 후 스크립트 작성 (왜? #type 을 받기위하여)
 window.addEventListener('load', function () {
     //타이핑 하고싶은 내용 저장
-    var memo1 = '반갑습니다'
-    var memo2 = '웹이라는 우주를 여행하는'
-    var memo3 = '웹 퍼블리셔 김건입니다'
-    var memo4 = "곧 우주여행을 출발합니다"
-    var memo5 = "다시 보시려면 클릭해주세요"
+    var memo1 = '반갑습니다.'
+    var memo2 = '웹이라는 우주를 여행하는.'
+    var memo3 = '웹 퍼블리셔 김건입니다.'
+    var memo4 = '곧 우주여행을 출발합니다.'
+    var memo5 = '다시 보시려면 클릭해주세요.'
     var memo6 = "Gun's potfolio"
 
     //텍스트 출력횟수 = 텍스트 글자수
