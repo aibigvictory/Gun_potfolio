@@ -9,6 +9,7 @@
 //호환성 maxin으로
 
 .section{position: relative;overflow: hidden;font-family: 'Do Hyeon', 'Noto Sans KR';}
+
 #intro{
     .container {
         cursor: pointer;
@@ -26,7 +27,6 @@
 
     #type{color: #777;font-size: 22px;line-height: 32px;cursor: pointer;}//
 }
-
 #myself{
     //버튼 위치 및 배열 제어
     .effect_button{
@@ -67,8 +67,8 @@
     //텍스트 공통 CSS
     .text_box{
         margin: 5vw 0 0 10vw;line-height: 1.5;transform: translate(150%,0);
-        strong{font-size: 1.6vw;color: #8957a1;}
-        p{font-size: 1.04vw;color: #fff;padding-bottom: 5vw;}
+        strong{font-size: 2.0vw;color: #8957a1;}
+        p{font-size: 1.4vw;color: #fff;padding-bottom: 5vw;}
     }
     //좌우에서 들어오는 애니메이션
     @keyframes active_img {
@@ -144,6 +144,9 @@
         }
     }
 }
+/* #contact{
+    width: 100%;background: #fff;
+} */
 
 //fullpage 네비게이션
 #fp-nav.fp-left{right: 40px;}

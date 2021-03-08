@@ -66,10 +66,10 @@
   line-height: 1.5;
   transform: translate(150%, 0); }
   #myself .text_box strong {
-    font-size: 1.6vw;
+    font-size: 2.0vw;
     color: #8957a1; }
   #myself .text_box p {
-    font-size: 1.04vw;
+    font-size: 1.4vw;
     color: #fff;
     padding-bottom: 5vw; }
 @keyframes active_img {
@@ -181,6 +181,9 @@
   #public ul #homepage3.active button {
     color: #a33f3f; }
 
+/* #contact{
+    width: 100%;background: #fff;
+} */
 #fp-nav.fp-left {
   right: 40px; }
 
