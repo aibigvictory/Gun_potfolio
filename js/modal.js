@@ -4,8 +4,8 @@ $(document).ready(function () {
         //미리 변수 선언
         var _modalIdx = $('#modal' + ($(this).parent().index() + 1)); //클릭버튼에 해당하는 모달 아이디
         var _modal = $('.modal') //모든 모달 클래스 호출
-        //_first //모달창 첫번쨰 요소
-        //_last //모달창 마지막 요소 : 닫기버튼
+        var _first = $('.first')//모달창 첫번쨰 요소
+        var _last = $('.last')//모달창 마지막 요소 : 닫기버튼
         var _modalClose = $('.modal_close')
         var modal_close_focus = $(this) //모달닫으면 포커스 옮기기용
 
@@ -16,7 +16,25 @@ $(document).ready(function () {
         var _dim = $('#dim');
         //#dim이 서서히 나타나도록 효과 > 모달창 나타남 (stop: 여러분 클릭해도 누적효과를 모두 지우도록)
         _dim.stop().fadeIn().next().css('visibility', 'visible');
-        //_first.focus();
+        //모달의 첫번째 컨텐츠로 포커스 이동
+        _modalIdx.find('.first').focus();
+
+        /* 모달 안에서 컨텐츠가 돌도록 함 */
+        //첫번째 컨텐츠에서 shift + tab을 누르면 .last로 감
+        _first.on('keydown', function (e) {
+            console.log(e.keyCode);
+            if (e.shiftKey && e.keyCode === 9) {
+                e.preventDefault();
+                _last.focus();
+            }
+        });
+        //닫기버튼에서 tab을 누르면 .first로 감
+        _last.on('keydown', function (e) {
+            if (!e.shiftKey && e.keyCode === 9) {
+                e.preventDefault();
+                _first.focus();
+            }
+        });
 
         //모달 닫기 버튼을 누르면
         $(_modalClose).on('click', function () {
@@ -39,31 +57,7 @@ $(document).ready(function () {
         $(window).on('keydown', function (e) {
             if (e.keyCode === 27) _modalClose.click();
         })
-        
-
+        //a태그 역할 봉인
         return false;
     });
 });
-
-/* $(document).ready(function () {
-    $('.md_open').on('click', function () {
-        _dim.stop().fadeIn().next().css('visibility', 'visible');
-        _first.focus();
-
-        _first.on('keydown', function (e) {
-            console.log(e.keyCode);
-            if (e.shiftKey && e.keyCode === 9) {
-                e.preventDefault();
-                _last.focus();
-            }
-        });
-
-        _last.on('keydown', function (e) {
-            if (!e.shiftKey && e.keyCode === 9) {
-                e.preventDefault();
-                _first.focus();
-            }
-        });
-
-    });
-}); */
