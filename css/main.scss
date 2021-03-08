@@ -1,3 +1,6 @@
+@charset "utf-8";
+
+//px > vw 로 쉽게 계산
 @function vw-calc($px) {
     $vwSize : $px  / (1920 / 100);
     @return  #{$vwSize}vw;
@@ -5,7 +8,7 @@
 
 //호환성 maxin으로
 
-.section{position: relative;overflow: hidden;}
+.section{position: relative;overflow: hidden;font-family: 'Do Hyeon', 'Noto Sans KR';}
 #intro{
     .container {
         cursor: pointer;
@@ -21,7 +24,7 @@
         text-align: center;
     }
 
-    #type{color: #777;font-size: 22px;line-height: 32px;cursor: pointer;font-family: Do Hyeon}
+    #type{color: #777;font-size: 22px;line-height: 32px;cursor: pointer;}//
 }
 
 #myself{
@@ -113,7 +116,7 @@
                     transform: translate(-50%,0);transition: transform 0.3s;
                     color: #fff;
                     img{width: vw-calc(98);}
-                    h3{padding: vw-calc(30) 0 vw-calc(25);font-size: vw-calc(40);}//font-weight: 500;
+                    h3{padding: vw-calc(30) 0 vw-calc(25);font-size: vw-calc(50);font-family: Noto Sans KR;font-weight: 700;}//font-weight: 500;
                     p{line-height: 1.7;opacity: 0.7;}//font-weight: 300;
                     button{opacity: 0;transition:all 0.3s;width: 180px;height: 48px;line-height: 48px;border-radius: 6px;font-size: 16px;margin-top: 20px;color: #fff;}
                 }

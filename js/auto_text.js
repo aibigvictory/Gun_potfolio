@@ -37,6 +37,20 @@ window.addEventListener('load', function () {
             remove()
     }
 
+    function repeat() {
+        //console.log(noRepeat);
+        //반복 방지를 위해 코드가 실행되는 동안 noRepeat의 값을 false로 바꿔준다
+        if (noRepeat) {
+            //단 한번 배경 넓어지는 효과 적용
+            if (oneRepeat) {
+                document.getElementById('container').classList.add('active')
+                oneRepeat = false;
+            }
+            noRepeat = false;
+            target.innerHTML = '';
+            type();
+        }
+    }
     //remove 함수 : txtnum에서 센 텍스트 갯수만큼 지워주고 i-- 실행, i가 -1이 되면 type함수와 txtnum 함수를 호출해서 반복
     function remove() {
         //console.log('i',i);
@@ -56,19 +70,10 @@ window.addEventListener('load', function () {
     type();
     
     //함수실행이 끝나고 클릭하면 다시 반복
-    document.getElementById('container').addEventListener('click', function () {    console.log(noRepeat);
-        //반복 방지를 위해 코드가 실행되는 동안 noRepeat의 값을 false로 바꿔준다
-        if (noRepeat) {
-            //단 한번 배경 넓어지는 효과 적용
-            if (oneRepeat) {
-                document.getElementById('container').classList.add('active')
-                oneRepeat = false;
-            }
-            noRepeat = false;
-            target.innerHTML = '';
-            type();
-        }
-        
-        //console.log('tmp',noRepeat);
+    document.getElementById('container').addEventListener('click', function () {   
+        repeat();
+    });
+    document.getElementById('type').addEventListener('click', function () {   
+        repeat();
     });
 });
