@@ -12,15 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon:regular" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,regular,500,700,900" rel="stylesheet" />
     <style>
-        /* 열려질 상세 모달 */
-        /* 모달이 제일 앞에 나올 수 있도록 index 최대, 위치 고정  */
-        #dim, .modal{position: fixed;z-index: 1000;}
-        #dim{/* display: none; */top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.5);}
-        /* 모달 상세 컨텐츠 */
-        .modal{/* visibility: hidden; */background: #fff;padding: 50px;/* top: 50%;left: 50%;transform: translate(-50%, -50%); */}
-        #modal1{width: 650px;height: 750px;}
-        #modal2{width: 450px;}
-        /* 모달 닫기버튼{position: absolute;right: 10px;top: 10px;width: 50px;height: 50px;background: pink;} */
+        
     </style>
     <script src='./js/jquery-1.12.4.min.js'></script>
     <script src='./js/gsap.min.js'></script>
@@ -441,15 +433,16 @@
     </div>
 
     <!-- modal -->
-    <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="">
-        <button type="button">닫기</button>
+    <div id="modal1" class="modal" role="dialog" aria-modal="true">
+        <button class="modal_close" type="button">닫기</button>
     </div>
-    <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="">
-        <button type="button">닫기</button>
+    <div id="modal2" class="modal" role="dialog" aria-modal="true">
+        <button class="modal_close" type="button">닫기</button>
     </div>
-    <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="">
-        <button type="button">닫기</button>
+    <div id="modal3" class="modal" role="dialog" aria-modal="true">
+        <button class="modal_close" type="button">닫기</button>
     </div>
+    
 
 
     <!-- 안전하게 DOM 이 모두 로드되고 호출 -->
