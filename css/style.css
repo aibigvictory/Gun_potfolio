@@ -2,7 +2,7 @@
    HTML5 CSS Reset Minified - Eric Meyer
    ========================================================================== */
 
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
 body{line-height:1}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 nav ul{list-style:none}
@@ -50,12 +50,13 @@ html,body{
 #dim{display: none;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.6);}
 /* 모달 상세 컨텐츠 */
 .modal{visibility: hidden;background: #fff;padding: 0 5vw;top: 50%;left: 50%;transform: translate(-50%, -50%);overflow: hidden;overflow-y: scroll;width: 80%;height: 80%;font-family: Do Hyeon;}
-.modal_cnt{width: 100%;height: 4500px;}
+.modal_cnt{width: 100%;height: 300vw;}
 .modal_cnt h1{width: 100%;text-align: center;padding: 20px 0;;margin: 40px 0 20px;font-size: 3vw;border-radius: 20px;}
 .modal_cnt h1:focus{border: 2px solid #000;}
 .modal_cnt h2{padding: 50px 0 30px;font-size: 2.4vw;font-weight: 500;color: #444;}
+.modal_cnt h2:focus{border: none;}
 .modal_cnt h2 span{border-bottom: 3px solid #555;}
-.modal_cnt ul a li{height: 30vw;/* background: aqua; */margin-bottom: 4vw;}
+.modal_cnt ul a li{height: 30vw;/* background: aqua; */padding-bottom: 6vw;}
 .modal_cnt ul a li div{float: left;background: url(../image/laon.jpg) no-repeat center;width: calc(40vw);height: 30vw;background-size: cover;border: 3px solid #777;box-sizing: border-box;}
 /* .modal_cnt ul a:nth-child(2) li div{background-image: url(../image/modal/Perceivable.jpg);} */
 .modal_cnt ul a:nth-child(even) li div{float: right;}
