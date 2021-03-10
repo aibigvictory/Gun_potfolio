@@ -200,51 +200,51 @@ body {
 
         &.mercury {
             & > .preview {
-                background: url('https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg') !important;
+                background: url('../image/skill/preview/2k_makemake_fictional.jpg') !important;
             }
         }
         &.venus {
             & > .preview {
-                background: url('https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg') !important;
+                background: url('../image/skill/preview/ven0aaa2-copy-428-321.jpg') !important;
             }
         }
         &.earth {
             & > .preview {
-                background: url('https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg') !important;
+                background: url('../image/skill/preview/new_earth_texture_map_by_lightondesigns.jpg') !important;
             }
         }
         &.mars {
             & > .preview {
-                background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg') !important;
+                background: url('../image/skill/preview/mars_texture.jpg') !important;
             }
         }
 
         &.jupiter {
             & > .preview {
-                background: url('https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg') !important;
+                background: url('../image/skill/preview/PIA07782_hires.jpg') !important;
             }
         }
 
         &.saturn {
             & > .preview {
-                background: url('https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg') !important;
+                background: url('../image/skill/preview/2k_saturn.jpg') !important;
             }
         }
 
         &.uranus {
             & > .preview {
-                background: url('https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png') !important;
+                background: url('../image/skill/preview/uranus_texture_map_by_jcpag2010-db7yjwb.png') !important;
             }
         }
 
         &.neptune {
             & > .preview {
-                background: url('https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png') !important;
+                background: url('../image/skill/preview/neptune_texture_map_by_jcpag2010-dbcjcv5.png') !important;
             }
         }
         &.pluto {
             & > .preview {
-                background: url('https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png') !important;
+                background: url('../image/skill/preview/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png') !important;
             }
         }
     }
@@ -740,7 +740,7 @@ body {
                         @include makeTrajectory(1500px, -150px, -110px);
                     }
                     & .moon {
-                        @include makeMoon(800px, -160px, 0.45, 'https://img2.cgtrader.com/items/702173/682fad2a11/92k-moon-color-map-3d-model.jpg');
+                        @include makeMoon(800px, -160px, 0.45, '../image/skill/moon/92k-moon-color-map-3d-model.jpg');
 
                         h3 {
                             color: $earth;
@@ -761,7 +761,7 @@ body {
                     }
 
                     & .deimos {
-                        @include makeMoon(900px, -100px, 0.45, 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg');
+                        @include makeMoon(900px, -100px, 0.45, '../image/skill/moon/PIA07782_hires.jpg');
                     }
 
                     & .trajectory.d {
@@ -773,7 +773,7 @@ body {
                     }
 
                     & .phoebos {
-                        @include makeMoon(100px, -160px, 0.5, 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg');
+                        @include makeMoon(100px, -160px, 0.5, '../image/skill/moon/PIA07782_hires.jpg');
 
 
                     }
@@ -801,15 +801,15 @@ body {
                     @include makePlanet(rgba(188, 143, 127, 0.6), rgba(234, 205, 199, 0.6), '../image/skill/Jupiter.jpg');
 
                     & .lo {
-                        @include makeMoon(100px, -100px, 0.4, 'http://stevealbers.net/albers/sos/jupiter/io/io_rgb_cyl.jpg');
+                        @include makeMoon(100px, -100px, 0.4, '../image/skill/moon/io_rgb_cyl.jpg');
                     }
 
                     & .europa {
-                        @include makeMoon(400px, -210px, 0.45, 'http://i.imgur.com/ZZBiHOH.jpg');
+                        @include makeMoon(400px, -210px, 0.45, '../image/skill/moon/ZZBiHOH.jpg');
                     }
 
                     & .ganymede {
-                        @include makeMoon(900px, -70px, 0.4, 'https://vignette.wikia.nocookie.net/planet-texture-maps/images/1/14/Ganymede.jpg/revision/latest?cb=20180104001948');
+                        @include makeMoon(900px, -70px, 0.4, '../image/skill/moon/Ganymede-moon.jpg');
                     }
 
 
@@ -835,15 +835,15 @@ body {
                     }
 
                     & .titan {
-                        @include makeMoon(100px, -100px, 0.4, 'https://pre00.deviantart.net/bea3/th/pre/i/2017/057/7/f/titan_texture_map_8k_by_fargetanik-db0f8m0.png');
+                        @include makeMoon(100px, -100px, 0.4, '../image/skill/moon/titan_texture_map_8k_by_fargetanik-db0f8m0.png');
                     }
 
                     & .dione {
-                        @include makeMoon(400px, -210px, 0.45, 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA12577-640x350.jpg');
+                        @include makeMoon(400px, -210px, 0.45, '../image/skill/moon/PIA12577-640x350.jpg');
                     }
 
                     & .enceladus {
-                        @include makeMoon(900px, -70px, 0.4, 'https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA0NC8yMzkvb3JpZ2luYWwvZW5jZWxhZHVzLW1hcC1jYXNzaW5pLmpwZw==');
+                        @include makeMoon(900px, -70px, 0.4, '../image/skill/moon/full.jpg');
                     }
                 }
                 &.uranus {
@@ -867,15 +867,15 @@ body {
                     }
 
                     & .miranda {
-                        @include makeMoon(100px, -100px, 0.4, 'http://celestia.simulatorlabbs.com/CelSL/textures/medres/miranda.jpg');
+                        @include makeMoon(100px, -100px, 0.4, '../image/skill/moon/miranda.jpg');
                     }
 
                     & .ariel {
-                        @include makeMoon(400px, -210px, 0.45, 'http://celestia.freedoors.org/Celestia-Doors/textures/medres/ariel.jpg');
+                        @include makeMoon(400px, -210px, 0.45, '../image/skill/moon/ariel.jpg');
                     }
 
                     & .umbriel {
-                        @include makeMoon(900px, -70px, 0.4, 'http://celestia.freedoors.org/Celestia-Doors/textures/medres/titania.jpg');
+                        @include makeMoon(900px, -70px, 0.4, '../image/skill/moon/umbriel.jpg');
                     }
                     @include makePlanet(rgba(127, 188, 171, 0.6), rgba(234, 205, 199, 0.6), '../image/skill/uranus.png');
                 }
@@ -900,15 +900,15 @@ body {
                     }
 
                     & .triton {
-                        @include makeMoon(100px, -100px, 0.4, 'https://img00.deviantart.net/b934/i/2016/198/b/0/triton_texture_map_14k_by_fargetanik-daac9tm.png');
+                        @include makeMoon(100px, -100px, 0.4, '../image/skill/moon/triton_texture_map_14k_by_fargetanik-daac9tm.png');
                     }
 
                     & .proteus {
-                        @include makeMoon(400px, -210px, 0.45, 'http://2.bp.blogspot.com/-NrsDNbSk8TU/VKmLHdOgw0I/AAAAAAAAHvY/dod1Kqv2Ta8/s1600/NereidTxt2.jpg');
+                        @include makeMoon(400px, -210px, 0.45, '../image/skill/moon/NereidTxt2.jpg');
                     }
 
                     & .nereid {
-                        @include makeMoon(900px, -70px, 0.4, 'http://4.bp.blogspot.com/-3eyaVs4az74/VKmMpLo6FYI/AAAAAAAAHvs/zK5NTllQYnk/s1600/NereidTxt.jpg');
+                        @include makeMoon(900px, -70px, 0.4, '../image/skill/moon/NereidTxt.jpg');
                     }
 
                     @include makePlanet(rgb(45, 65, 83), rgba(234, 205, 199, 0.6), '../image/skill/neptune.jpg');

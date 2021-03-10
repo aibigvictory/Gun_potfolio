@@ -48,30 +48,42 @@ html,body{
 /* 모달 위치 고정  */
 #dim, .modal{position: fixed;}
 #dim{display: none;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.6);}
+
 /* 모달 상세 컨텐츠 */
 .modal{visibility: hidden;background: #fff;padding: 0 5vw;top: 50%;left: 50%;transform: translate(-50%, -50%);overflow: hidden;overflow-y: scroll;width: 80%;height: 80%;font-family: Do Hyeon;}
-.modal_cnt{width: 100%;height: 300vw;}
+.modal_cnt{width: 100%;}
 .modal_cnt h1{width: 100%;text-align: center;padding: 20px 0;;margin: 40px 0 20px;font-size: 3vw;border-radius: 20px;}
 .modal_cnt h1:focus{border: 2px solid #000;}
 .modal_cnt h2{padding: 50px 0 30px;font-size: 2.4vw;font-weight: 500;color: #444;}
 .modal_cnt h2:focus{border: none;}
 .modal_cnt h2 span{border-bottom: 3px solid #555;}
 .modal_cnt ul a li{height: 30vw;/* background: aqua; */padding-bottom: 6vw;}
-.modal_cnt ul a li div{float: left;background: url(../image/laon.jpg) no-repeat center;width: calc(40vw);height: 30vw;background-size: cover;border: 3px solid #777;box-sizing: border-box;}
+.modal_cnt ul a li div{float: left;background: url(../image/modal/laon.jpg) no-repeat center;width: calc(40vw);height: 30vw;background-size: cover;border: 3px solid #777;box-sizing: border-box;}
 /* .modal_cnt ul a:nth-child(2) li div{background-image: url(../image/modal/Perceivable.jpg);} */
 .modal_cnt ul a:nth-child(even) li div{float: right;}
 .modal_cnt ul a li p{float: right;width: 35vw;height: 21vw;padding-top: 9vw;text-align: right;font-size: 1.8vw;color: #999;}
 .modal_cnt ul a:nth-child(even) li p{float: left;text-align: left;}
 
 /* 사진 교체용 */
-.modal_cnt_ul1 a:nth-child(2) li div{background-image: url(../image/modal/sass.jpg);}
-.modal_cnt_ul1 a:nth-child(3) li div{background-image: url(../image/modal/fucntion_mixin.jpg);}
-.modal_cnt_ul1 a:nth-child(4) li div{background-image: url(../image/modal/flex.jpg);}
+#modal1 .modal_cnt_ul1 a:nth-child(3) li div{background-image: url(../image/modal/sass.jpg);}
+#modal1 .modal_cnt_ul1 a:nth-child(4) li div{background-image: url(../image/modal/fucntion_mixin.jpg);}
+#modal1 .modal_cnt_ul1 a:nth-child(5) li div{background-image: url(../image/modal/flex.jpg);}
 
-.modal_cnt_ul2 a:nth-child(1) li div{background-image: url(../image/modal/Perceivable.jpg);}
-.modal_cnt_ul2 a:nth-child(2) li div{background-image: url(../image/modal/Operable.jpg);}
-.modal_cnt_ul2 a:nth-child(3) li div{background-image: url(../image/modal/Understandable.jpg);}
-.modal_cnt_ul2 a:nth-child(4) li div{background-image: url(../image/modal/Robust.jpg);}
+#modal1 .modal_cnt_ul2 a:nth-child(1) li div{background-image: url(../image/modal/Perceivable.jpg);}
+#modal1 .modal_cnt_ul2 a:nth-child(2) li div{background-image: url(../image/modal/Operable.jpg);}
+#modal1 .modal_cnt_ul2 a:nth-child(3) li div{background-image: url(../image/modal/Understandable.jpg);}
+#modal1 .modal_cnt_ul2 a:nth-child(4) li div{background-image: url(../image/modal/Robust.jpg);}
+
+#modal2 .modal_cnt_ul1 a:nth-child(2) li div{background-image: url(../image/modal/hanhwa.jpg);}
+#modal2 .modal_cnt_ul1 a:nth-child(3) li div{background-image: url(../image/modal/nav.jpg);}
+#modal2 .modal_cnt_ul1 a:nth-child(4) li div{background-image: url(../image/modal/hover.jpg);}
+
+#modal2 .modal_cnt_ul2 a:nth-child(1) li div{background-image: url(../image/modal/Perceivable_2.jpg);}
+#modal2 .modal_cnt_ul2 a:nth-child(2) li div{background-image: url(../image/modal/Operable_2.jpg);}
+#modal2 .modal_cnt_ul2 a:nth-child(3) li div{background-image: url(../image/modal/Understandable_2.jpg);}
+
+#modal3{overflow: hidden;}
+#modal3 p{width: 100%;text-align: center;padding-top: 36vh;font-size: 4vw;}
 
 /* 모달 닫기 버튼 */
 .modal_close{position: absolute;right: 10px;top: 30px;width: 50px;height: 50px;background: #222;color: #fff;font-size: 20px;border-radius: 5px;line-height: 50px;}

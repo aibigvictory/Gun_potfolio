@@ -9,6 +9,13 @@ $(document).ready(function () {
         var _modalClose = $('.modal_close')
         var modal_close_focus = $(this) //모달닫으면 포커스 옮기기용
 
+        //배경 효과 기억용 변수
+        var bgRemeber1 = $('#homepage1 canvas');
+        var bgRemeber2 = $('#homepage2 canvas');
+        var bgRemeber3 = $('#homepage3 canvas');
+
+        $('.homepage canvas').remove();
+        
         //클릭에 해당하는 모달 외 다른 모달 및 컨텐츠 스크린리더에서 못읽게 함
         $('.modal').siblings().attr({'aria-hidden': true, inert: ''});
         //모달 앞에 #dim 생성 후 변수에 저장
@@ -46,6 +53,11 @@ $(document).ready(function () {
             $(this).parent().css('visibility', 'hidden').siblings().removeAttr('aria-hidden inert');
             //열었던 버튼으로 다시 포커스가 가도록
             modal_close_focus.focus();
+
+            //닫기를 누르면 다시 배경 효과 부여
+            $('#homepage1').append(bgRemeber1);
+            $('#homepage2').append(bgRemeber2);
+            $('#homepage3').append(bgRemeber3);
         });
 
         //모달 영역 밖을 클릭하면 모달을 빠져나오도록
