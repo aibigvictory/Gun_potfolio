@@ -178,12 +178,7 @@ $pluto: #FF8732;
     }
 }
 
-body {
-    overflow: hidden;
-    background: black;
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif;
-
+.skill_wrap {
     .logo {
         color: white;
         position: absolute;
@@ -557,9 +552,11 @@ body {
                                 // a = 2
                                 // i = 2
 
-                                @if($a==$i) {
+                                .section.active &{
+                                    @if($a==$i) {
 
-                                    animation: planet 60s 3.9s infinite linear;
+                                        animation: planet 50s 0.9s infinite linear;
+                                    }
                                 }
 
                                 &_description {
