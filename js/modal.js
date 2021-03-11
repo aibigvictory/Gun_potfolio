@@ -3,8 +3,11 @@ $(document).ready(function () {
     /* var bgRemeber1 = $('#homepage1 canvas');
     var bgRemeber2 = $('#homepage2 canvas');
     var bgRemeber3 = $('#homepage3 canvas'); */
-    /* var bgRemeber = [$('#homepage1 canvas'),$('#homepage2 canvas'),$('#homepage3 canvas')];
- */
+    var bgRemeber = [$('#homepage1 canvas'),$('#homepage2 canvas'),$('#homepage3 canvas')];
+
+    //모달이 열리면 풀페이지 스크롤 동작 잠금을 위한 변수
+    
+
     //모달 오픈을 클릭하면 동작
     $('.modal_open').on('click', function () {
         //미리 변수 선언
@@ -15,8 +18,12 @@ $(document).ready(function () {
         var _modalClose = $('.modal_close')
         var modal_close_focus = $(this) //모달닫으면 포커스 옮기기용
 
+        //모달이 열리면 풀페이지 스크롤 동작 잠금
+        modal_close = false;
+        //console.log(modal_close)
 
-        /* $('.homepage canvas').remove(); */
+
+        $('.homepage canvas').remove();
         
         //클릭에 해당하는 모달 외 다른 모달 및 컨텐츠 스크린리더에서 못읽게 함
         $('.modal').siblings().attr({'aria-hidden': true, inert: ''});
@@ -55,9 +62,12 @@ $(document).ready(function () {
             $(this).parent().css('visibility', 'hidden').siblings().removeAttr('aria-hidden inert');
             
             //닫기를 누르면 다시 배경 효과 부여
-            /* $('#homepage1').append(bgRemeber[0]);
+            $('#homepage1').append(bgRemeber[0]);
             $('#homepage2').append(bgRemeber[1]);
-            $('#homepage3').append(bgRemeber[2]); */
+            $('#homepage3').append(bgRemeber[2]);
+            
+            //모달이 닫히면 다시 풀페이지 스크롤 동작
+            modal_close = false;
 
             //열었던 버튼으로 다시 포커스가 가도록
             modal_close_focus.focus();

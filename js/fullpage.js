@@ -8,6 +8,10 @@
  *
  * Copyright (C) 2018 http://alvarotrigo.com/fullPage - A project by Alvaro Trigo
  */
+
+//모달이 열리면 풀페이지 스크롤 잠금
+var modal_close = true;
+
 (function( root, window, document, factory, undefined) {
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
@@ -1520,73 +1524,76 @@
         var prevTime = new Date().getTime();
 
         function MouseWheelHandler(e) {
-            var curTime = new Date().getTime();
-            var isNormalScroll = hasClass($(COMPLETELY_SEL)[0], NORMAL_SCROLL);
+            //모달이 켜져있으면 풀페이지 스크롤링 막기
+            if (modal_close) {
+                var curTime = new Date().getTime();
+                var isNormalScroll = hasClass($(COMPLETELY_SEL)[0], NORMAL_SCROLL);
 
-            //is scroll allowed?
-            if (!isScrollAllowed.m.down && !isScrollAllowed.m.up) {
-                preventDefault(e);
-                return false;
-            }
-
-            //autoscrolling and not zooming?
-            if(options.autoScrolling && !controlPressed && !isNormalScroll){
-                // cross-browser wheel delta
-                e = e || window.event;
-                var value = e.wheelDelta || -e.deltaY || -e.detail;
-                var delta = Math.max(-1, Math.min(1, value));
-
-                var horizontalDetection = typeof e.wheelDeltaX !== 'undefined' || typeof e.deltaX !== 'undefined';
-                var isScrollingVertically = (Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta)) || (Math.abs(e.deltaX ) < Math.abs(e.deltaY) || !horizontalDetection);
-
-                //Limiting the array to 150 (lets not waste memory!)
-                if(scrollings.length > 149){
-                    scrollings.shift();
-                }
-
-                //keeping record of the previous scrollings
-                scrollings.push(Math.abs(value));
-
-                //preventing to scroll the site on mouse wheel when scrollbar is present
-                if(options.scrollBar){
+                //is scroll allowed?
+                if (!isScrollAllowed.m.down && !isScrollAllowed.m.up) {
                     preventDefault(e);
+                    return false;
                 }
 
-                //time difference between the last scroll and the current one
-                var timeDiff = curTime-prevTime;
-                prevTime = curTime;
+                //autoscrolling and not zooming?
+                if(options.autoScrolling && !controlPressed && !isNormalScroll){
+                    // cross-browser wheel delta
+                    e = e || window.event;
+                    var value = e.wheelDelta || -e.deltaY || -e.detail;
+                    var delta = Math.max(-1, Math.min(1, value));
 
-                //haven't they scrolled in a while?
-                //(enough to be consider a different scrolling action to scroll another section)
-                if(timeDiff > 200){
-                    //emptying the array, we dont care about old scrollings for our averages
-                    scrollings = [];
-                }
+                    var horizontalDetection = typeof e.wheelDeltaX !== 'undefined' || typeof e.deltaX !== 'undefined';
+                    var isScrollingVertically = (Math.abs(e.wheelDeltaX) < Math.abs(e.wheelDelta)) || (Math.abs(e.deltaX ) < Math.abs(e.deltaY) || !horizontalDetection);
 
-                if(canScroll){
-                    var averageEnd = getAverage(scrollings, 10);
-                    var averageMiddle = getAverage(scrollings, 70);
-                    var isAccelerating = averageEnd >= averageMiddle;
+                    //Limiting the array to 150 (lets not waste memory!)
+                    if(scrollings.length > 149){
+                        scrollings.shift();
+                    }
 
-                    //to avoid double swipes...
-                    if(isAccelerating && isScrollingVertically){
-                        //scrolling down?
-                        if (delta < 0) {
-                            scrolling('down');
+                    //keeping record of the previous scrollings
+                    scrollings.push(Math.abs(value));
 
-                        //scrolling up?
-                        }else {
-                            scrolling('up');
+                    //preventing to scroll the site on mouse wheel when scrollbar is present
+                    if(options.scrollBar){
+                        preventDefault(e);
+                    }
+
+                    //time difference between the last scroll and the current one
+                    var timeDiff = curTime-prevTime;
+                    prevTime = curTime;
+
+                    //haven't they scrolled in a while?
+                    //(enough to be consider a different scrolling action to scroll another section)
+                    if(timeDiff > 200){
+                        //emptying the array, we dont care about old scrollings for our averages
+                        scrollings = [];
+                    }
+
+                    if(canScroll){
+                        var averageEnd = getAverage(scrollings, 10);
+                        var averageMiddle = getAverage(scrollings, 70);
+                        var isAccelerating = averageEnd >= averageMiddle;
+
+                        //to avoid double swipes...
+                        if(isAccelerating && isScrollingVertically){
+                            //scrolling down?
+                            if (delta < 0) {
+                                scrolling('down');
+
+                            //scrolling up?
+                            }else {
+                                scrolling('up');
+                            }
                         }
                     }
+
+                    return false;
                 }
 
-                return false;
-            }
-
-            if(options.fitToSection){
-                //stopping the auto scroll to adjust to a section
-                activeAnimation = false;
+                if(options.fitToSection){
+                    //stopping the auto scroll to adjust to a section
+                    activeAnimation = false;
+                }
             }
         }
 
