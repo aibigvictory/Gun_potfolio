@@ -11,11 +11,11 @@ $(document).ready(function () { //버튼을 누르면
     $('.homepage').on({
         //마우스 진입 또는 키보드 포커싱하면 active 추가
         'mouseenter focusin' : function () {
-            $(this).addClass('active');
+            $(this).addClass('active').siblings().removeClass('active');
         },
         //마우스 나감 또는 키보드 빠져나가면 active 제거
         'mouseleave focusout' : function () {
-            $(this).removeClass('active');
+            $(this).removeClass('active').siblings().removeClass('active');
         }
     });
 });

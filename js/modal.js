@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    //배경 효과 기억용 변수
+    /* var bgRemeber1 = $('#homepage1 canvas');
+    var bgRemeber2 = $('#homepage2 canvas');
+    var bgRemeber3 = $('#homepage3 canvas'); */
+    /* var bgRemeber = [$('#homepage1 canvas'),$('#homepage2 canvas'),$('#homepage3 canvas')];
+ */
     //모달 오픈을 클릭하면 동작
     $('.modal_open').on('click', function () {
         //미리 변수 선언
@@ -9,12 +15,8 @@ $(document).ready(function () {
         var _modalClose = $('.modal_close')
         var modal_close_focus = $(this) //모달닫으면 포커스 옮기기용
 
-        //배경 효과 기억용 변수
-        var bgRemeber1 = $('#homepage1 canvas');
-        var bgRemeber2 = $('#homepage2 canvas');
-        var bgRemeber3 = $('#homepage3 canvas');
 
-        $('.homepage canvas').remove();
+        /* $('.homepage canvas').remove(); */
         
         //클릭에 해당하는 모달 외 다른 모달 및 컨텐츠 스크린리더에서 못읽게 함
         $('.modal').siblings().attr({'aria-hidden': true, inert: ''});
@@ -51,13 +53,14 @@ $(document).ready(function () {
             });
             //모달도 히든 처리 + 해당 모달 외 스크린리더에서 못읽게 했던 조치를 푼다
             $(this).parent().css('visibility', 'hidden').siblings().removeAttr('aria-hidden inert');
+            
+            //닫기를 누르면 다시 배경 효과 부여
+            /* $('#homepage1').append(bgRemeber[0]);
+            $('#homepage2').append(bgRemeber[1]);
+            $('#homepage3').append(bgRemeber[2]); */
+
             //열었던 버튼으로 다시 포커스가 가도록
             modal_close_focus.focus();
-
-            //닫기를 누르면 다시 배경 효과 부여
-            $('#homepage1').append(bgRemeber1);
-            $('#homepage2').append(bgRemeber2);
-            $('#homepage3').append(bgRemeber3);
         });
 
         //모달 영역 밖을 클릭하면 모달을 빠져나오도록
@@ -69,7 +72,22 @@ $(document).ready(function () {
         $(window).on('keydown', function (e) {
             if (e.keyCode === 27) _modalClose.click();
         })
+
+        
+
         //a태그 역할 봉인
         return false;
     });
+
+    //마우스 인, 포커스 => 배경효과 사라지게 함으로 리소스 아낌
+    /* $('.homepage').on({
+        'mouseenter focusin' : function () {
+            $(this).children('canvas').remove()
+        },
+        'mouseleave focusout' : function () {
+            $('#homepage' + ($(this).index() + 1)).append(bgRemeber[$(this).index()])
+            //console.log('#homepage' + ($(this).index() + 1))
+            
+        }
+    }); */
 });
