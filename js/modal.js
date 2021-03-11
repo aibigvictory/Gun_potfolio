@@ -67,7 +67,7 @@ $(document).ready(function () {
             $('#homepage3').append(bgRemeber[2]);
             
             //모달이 닫히면 다시 풀페이지 스크롤 동작
-            modal_close = false;
+            modal_close = true;
 
             //열었던 버튼으로 다시 포커스가 가도록
             modal_close_focus.focus();
